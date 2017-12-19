@@ -21,8 +21,8 @@ import * as path from "path";
 import { processRequest } from "../../src/runner/processRequest";
 
 it("should process full input", () => {
-  const filepath = path.join(__dirname, "./fixtures/runner_project/sample.lint.ts");
-  const tsconfig = path.join(__dirname, "./fixtures/runner_project/tsconfig.json");
+  const filepath = path.join(__dirname, "fixtures/runner_project/sample.lint.ts");
+  const tsconfig = path.join(__dirname, "fixtures/runner_project/tsconfig.json");
   const result = processRequest(inputForRequest(filepath, tsconfig));
   result.forEach((r: any) => r.issues.forEach((i: any) => (i.name = path.normalize(i.name))));
 
