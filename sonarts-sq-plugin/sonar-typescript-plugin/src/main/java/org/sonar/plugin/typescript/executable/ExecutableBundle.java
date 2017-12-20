@@ -19,11 +19,14 @@
  */
 package org.sonar.plugin.typescript.executable;
 
+import java.util.List;
 import org.sonar.api.batch.fs.InputFile;
 import org.sonar.plugin.typescript.TypeScriptRules;
 
 public interface ExecutableBundle {
 
   SonarTSRunnerCommand getSonarTsRunnerCommand(String tsconfigPath, Iterable<InputFile> inputFiles, TypeScriptRules typeScriptRules);
+
+  List<String> getSonarTSServerCommand();
 
 }
