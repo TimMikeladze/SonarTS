@@ -25,6 +25,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -363,6 +364,11 @@ public class ExternalTypescriptSensorTest {
       @Override
       public SonarTSRunnerCommand getSonarTsRunnerCommand(String tsconfigPath, Iterable<InputFile> inputFiles, TypeScriptRules typeScriptRules) {
         return new SonarTSRunnerCommand(inputFiles, ruleCheckCommand);
+      }
+
+      @Override
+      public List<String> getSonarTSServerCommand() {
+        return Collections.emptyList();
       }
     }
   }
